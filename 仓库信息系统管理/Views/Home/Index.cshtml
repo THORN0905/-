@@ -1,0 +1,142 @@
+﻿@model Models.Login
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>协同办公管理系统</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <script type="text/javascript">
+        window.onload = function () {
+            var aDmin = document.getElementById('admin');
+            btn_a = aDmin.getElementsByTagName('a')[0];
+            uladmin = document.getElementById('ul_admin');
+
+            btn_a.onclick = function () {
+                uladmin.style.display = 'block';
+
+            }
+            uladmin.onmouseleave = function () {
+                uladmin.style.display = 'none';
+            }
+
+
+        }
+
+    </script>
+</head>
+<body>
+    <div id="main">
+        <div class="top">
+            <div class="logo"></div>
+            <div class="admin" id="admin">
+                <a href="#">@TempData["user"]</a>
+                <ul id="ul_admin">
+                    <li><a href="#">个人资料</a></li>
+                    <li><a href="#">我的信息</a></li>
+                    <li><a href="#">安全退出</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--标志和admin end-->
+
+        <div id="block_list">
+
+
+            <div class="block_left">
+                <div class="wel_text">
+                    <div class="wel_black">欢迎登入协同办公管理系统</div>
+                </div>
+                <!--欢迎登入协同办公管理系统 end-->
+
+                <div class="secend_box">
+                    <div class="weather">
+                        <a href="#">请假管理</a>
+                    </div>
+                    <!--天气预报 end-->
+
+                    <div class="newscenter">
+                        <a href="#">
+                            <div class="new_title">
+                                新闻中心
+                            </div>
+                            <div class="news_show">
+                                习近平:调查外滩踩踏事件原因
+                            </div>
+                        </a>
+                    </div>
+                    <!--新闻中心 end-->
+                    <div class="clear"></div>
+                </div>
+
+                <div class="secend_box">
+                    <div class="send">
+                        <a href="#">发文管理</a>
+                    </div>
+
+                    <div class="accept">
+                        <a href="#">收文管理</a>
+                    </div>
+
+                    <div class="TOdeal">
+                        <a href="#">文件管理</a>
+                    </div>
+
+                    <div class="clear"></div>
+                </div>
+
+
+
+            </div>
+
+            <div class="block_right">
+                <div class="right_box">
+                    <div class="talk">
+                        <a href="#">网上聊天</a>
+                    </div>
+                    <div class="book">
+                        <a href="#">通讯录</a>
+                    </div>
+                    <div class="message">
+                        <a href="#">短消息</a>
+                    </div>
+                    <div class="office">
+                        <a href="#">个人办公</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="right_box">
+                    <div class="attendance">
+                        <a href="#">考勤管理</a>
+                    </div>
+                    <div class="official ">
+                        <a href="#">公文管理</a>
+                    </div>
+                    <div class="table">
+                        <a href="#">报表管理</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="right_box_end">
+                    <div class="folder">
+                        <a href="#">个人文件夹</a>
+                    </div>
+                    <div class="system ">
+                        <a href="#">系统配置</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+        <div class="clear"></div>
+    </div>
+
+</body>
+</html>
+
