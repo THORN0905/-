@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 html {
 	text-align: left;
 	height: 100%;
@@ -66,59 +66,9 @@ form {
 	background: url(../img/logo.jpg) no-repeat left center;
 	width: 600px;
 }
-/*会员按钮box*/
-#main .top .admin {
-	float: right;
-	width: 105px;
-	/*height: 40px;*/
-	border: 1px solid #20b5ad;
-	margin-top: 13px;
-	background: #0fafa7 url(../img/icon_san.jpg) 80px center no-repeat;
-	font-family: "microsoft yahei";
-	font-size: 14px;
-	color: #fff;
-	text-align: center;
-	/*line-height: 40px;*/
-}
-#main .top .admin a{
-	color: #fff;
-	display: block;
-	width: 105px;
-	height: 40px;
-	background: url(../img/icon_admin.jpg) 10px center no-repeat;
-	text-decoration: none;
-	line-height: 40px;
-}
-#main .top .admin a:hover{
-	text-decoration: underline;
-	display: block;
-}
 
-#main .top .admin #ul_admin{
-	position: absolute;
-	display: none;
-	border: 1px solid #20b5ad;
-	border-top: none;
-	float: left;
-	background: red;
-	width: 104px;
-	z-index: 999;
-}
-#main .top .admin #ul_admin li{
-	line-height: 35px;
-	background: #0fafa7;
-	background-image: none;
-}
-#main .top .admin #ul_admin li a{
-	line-height: 35px;
-	display: block;
-	background: #49c8c2;
-	background-image: none;
-}
-#main .top .admin #ul_admin li a:hover{
-	background: #0fafa7;
-	text-decoration: none;
-}
+
+
 /*版块box*/
 #block_list{
 	padding-top: 20px;

@@ -1,0 +1,55 @@
+﻿@model Models.Product
+
+@{
+    ViewBag.Title = "添加产品信息";
+    Layout = "~/Views/Shared/_LayoutPage_product.cshtml";
+}
+<link href="~/css/addproduct.css" rel="stylesheet" />
+<script src="~/js/Validate/jquery-1.8.2.min.js"></script>   
+<script src="~/js/Validate/jquery.validate.min.js"></script>
+<script src="~/js/Validate/jquery.validate.unobtrusive.min.js"></script>
+@{
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+}
+<div class="show_title"><p>添加产品信息</p></div>
+<div style="position:relative;bottom:70px;">@Html.Action("AdminDemo", "Login")</div>
+
+<div class="content_addpro" >
+        
+            @using (Html.BeginForm("Addproduct", "work", FormMethod.Post, new { @class = "customer_form", id = "addpro_form" }))
+            {
+                <div id="addpro_title">
+                        <span style="margin-right:80px;">产品详细信息</span>
+                </div>
+                <div class="addpro_item">
+                    <div class="addpro_itemName">*产品编号：</div>
+                    @Html.TextBox("ProductId", null, new { @class = "txt-input" })
+                    <div style="font-size:14px; color:red; margin-left:130px;font-style:italic; height:20px;">@Html.ValidationMessage("ProductId")@Html.ValidationMessage("IsExist")</div>
+                </div>
+                <div class="addpro_item">
+                    <div class="addpro_itemName">*产品名称：</div>
+                    @Html.TextBox("ProductName", null, new { @class = "txt-input" })
+                    <div style="font-size:14px; color:red; margin-left:130px;font-style:italic; height:20px;">@Html.ValidationMessage("ProductName")</div> 
+                </div>
+                <div class="addpro_item">
+                    <div class="addpro_itemName">*客户名称：</div>
+                    @Html.TextBox("Customer", null, new { @class = "txt-input" })
+                    <div style="font-size:14px; color:red; margin-left:130px;font-style:italic; height:20px;">@Html.ValidationMessage("Customer")</div>  
+                </div>
+                <div class="addpro_item">
+                    <div class="addpro_itemName">*计划产量：</div>
+                    @Html.TextBox("Plans", null, new { @class = "txt-input" })
+                    <div style="font-size:14px; color:red; margin-left:130px;font-style:italic; height:20px;">@Html.ValidationMessage("Plans")</div>
+                </div>
+                <div class="addpro_item">
+                    <div class="addpro_itemName">*备注：</div>
+                    @Html.TextBox("Ps", null, new { @class = "txt-input" })
+                </div>
+
+                <div id="addpro_btn">
+                    <div><input type="submit" value="添加产品" id="btn_sub" /></div>
+                    
+                </div>
+            }  
+</div>

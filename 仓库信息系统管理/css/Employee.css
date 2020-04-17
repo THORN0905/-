@@ -1,0 +1,122 @@
+﻿body {
+}
+ .Emp{
+        height:250px;
+        width:480px;
+        background-color:rgba(255,255,255,0.4);
+        margin:10px;
+        display:inline-block;
+        font-size:22px;
+    }
+
+    .fenge{
+        height:40px;
+        width:100%;
+        background-color:#44AAAA;
+        border:solid 2px #DEDEDE;
+    }
+    .AllEmps{
+        margin:70px 0 0 70px;
+    }
+    .EmpPic{
+        width:160px;
+        height:220px;
+        float:right;
+        background-color:yellow;
+    }
+    .searchEmp{
+        width:80%;
+        height:80px;
+        background-color:#92f5f8;
+        margin:50px auto;
+    }
+    .EmpTitle{
+        width:100px;
+        height:40px;
+        background-color:yellowgreen;
+        margin-left:-15px;
+        font-size:22px;
+        color:white;
+        display:inline-block;
+        float:left;
+    }
+    .SearchEmp_main{
+        background-color:#92f5f8; 
+        width:80%;
+        float:left; 
+        height:70px; 
+        margin:5px 10px;
+    }
+   .department{
+       font-size:22px;
+       height:40px;
+       width:250px;
+       background-color:#92f5f8;
+       margin:20px ;
+       display:inline-block;
+       float:left;
+   }
+
+     .job{
+       font-size:22px;
+       height:40px;
+       width:250px;
+       background-color:#92f5f8;
+       margin:20px  ;
+       float:left;
+       display:inline-block;
+   }
+
+  .Emp:hover{
+     cursor:pointer;
+    background-color:rgba(255,255,255,0.8);
+    box-shadow:5px 5px 7px #DEDEDE ;
+ }
+  
+#topsearch{
+	width:600px;
+	height: 50px;
+}
+#search{
+	width: 90%;
+	height: 34px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: #36dde8;
+}
+#Searchbtn{
+	width: 70px;
+	height: 40px;
+	position: absolute;
+	border-width: 4px;
+	padding-left: -4px;
+	border-style: none;
+	border-color:#36dde8;
+	background-color:#36dde8;
+	color: #555;
+	font-weight: bold;
+	font-size: 19px;
+	font-family: YouYuan;
+	outline-style:none;
+	outline-width: 0;
+}
+
+#Searchbtn:hover{
+	cursor:pointer;
+	background-color: #0c7890;
+    color:white;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.search{
+    float:left;
+    display:inline-block;
+    margin:18px 80px;
+    width:20%;
+}
+#JobSec{
+    height:35px;
+     font-size:19px;
+     width:160px;
+}

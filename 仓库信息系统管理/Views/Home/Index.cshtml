@@ -6,37 +6,13 @@
     <meta charset="utf-8" />
     <title>协同办公管理系统</title>
     <link rel="stylesheet" href="css/main.css" />
-    <script type="text/javascript">
-        window.onload = function () {
-            var aDmin = document.getElementById('admin');
-            btn_a = aDmin.getElementsByTagName('a')[0];
-            uladmin = document.getElementById('ul_admin');
 
-            btn_a.onclick = function () {
-                uladmin.style.display = 'block';
-
-            }
-            uladmin.onmouseleave = function () {
-                uladmin.style.display = 'none';
-            }
-
-
-        }
-
-    </script>
 </head>
 <body>
     <div id="main">
         <div class="top">
             <div class="logo"></div>
-            <div class="admin" id="admin">
-                <a href="#">@TempData["user"]</a>
-                <ul id="ul_admin">
-                    <li><a href="#">个人资料</a></li>
-                    <li><a href="#">我的信息</a></li>
-                    <li><a href="#">安全退出</a></li>
-                </ul>
-            </div>
+            @Html.Action("AdminDemo", "Login");
         </div>
         <!--标志和admin end-->
 
@@ -92,10 +68,10 @@
             <div class="block_right">
                 <div class="right_box">
                     <div class="talk">
-                        <a href="#">网上聊天</a>
+                        <a href="/Work">仓库管理</a>
                     </div>
                     <div class="book">
-                        <a href="#">通讯录</a>
+                        <a href="/Employee">员工管理</a>
                     </div>
                     <div class="message">
                         <a href="#">短消息</a>

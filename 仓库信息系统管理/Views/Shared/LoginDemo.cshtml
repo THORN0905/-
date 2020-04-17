@@ -1,0 +1,22 @@
+﻿@model Models.Login
+@using Models
+<link href="~/css/LoginDemo.css" rel="stylesheet" />
+<script src="~/js/jquery-1.6.min.js"></script>
+<script>
+    $(function () {
+        $("#LoginDemo_a").click(function() {
+            $("#ul_admin").css("display","block");
+        });
+        $("#ul_admin").mouseleave(function () {
+            $("#ul_admin").css("display", "none");
+        })
+    });
+</script>
+<div class="admin" id="LoginDemo">
+    <a href="#" id="LoginDemo_a">@Model.UserName</a>
+    <ul id="ul_admin" class="List">
+        <li><a href="#">个人资料</a></li>
+        <li><a href="#">我的信息</a></li>
+        <li><a href="#">安全退出</a></li>
+    </ul>
+</div>

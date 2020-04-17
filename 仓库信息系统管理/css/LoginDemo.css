@@ -1,0 +1,63 @@
+﻿.admin  a:hover{
+	text-decoration: underline;
+	display: block;
+}
+
+#ul_admin{
+	position: absolute;
+    display:none;
+	border: 1px solid #20b5ad;
+	border-top: none;
+	float: left;
+	background: red;
+	width: 104px;
+	z-index: 999;
+}
+ #ul_admin li{
+	line-height: 35px;
+	background: #0fafa7;
+	background-image: none;
+}
+#ul_admin li a{
+	line-height: 35px;
+	display: block;
+	background: #49c8c2;
+	background-image: none;
+}
+#ul_admin li a:hover{
+	background: #0fafa7;
+	text-decoration: none;
+}
+    #LoginDemo_a{
+	    color: #fff;
+	    width: 105px;
+	    height: 40px;
+        display:block;
+	    background: url(../img/icon_admin.jpg) 10px center no-repeat;
+	    text-decoration: none;
+	    line-height: 40px;
+    }
+    /*会员按钮box*/
+    #LoginDemo {
+	    float: right;
+	    width: 105px;
+	    /*height: 40px;*/
+	    border: 1px solid #20b5ad;
+	    margin-top: 13px;
+	    background: #0fafa7 url(../img/icon_san.jpg) 80px center no-repeat;
+	    font-family: "microsoft yahei";
+	    font-size: 14px;
+	    color: #fff;
+	    text-align: center;
+	    /*line-height: 40px;*/
+    }
+
+    #LoginDemo_a:hover{
+        color:black;
+    }
+
+    #LoginDemo_a:hover #ul_admin{
+        display:block !important;
+    }
+
+    

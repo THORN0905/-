@@ -27,9 +27,15 @@ namespace 仓库信息系统管理.Controllers
             else
             {
                 Session["CurrentUser"] = user;
-                TempData["user"] = user.UserName;
+                //TempData["user"] = user.UserName;
                 return RedirectToAction("Index", "Home");
             }              
+        }
+
+        public ActionResult AdminDemo()
+        {
+            Login user = (Login)Session["CurrentUser"];
+            return PartialView("LoginDemo", user);
         }
     }
 }

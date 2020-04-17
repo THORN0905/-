@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/show.css" rel="stylesheet" />
+    <link href="~/css/main.css" rel="stylesheet" />
+    <script src="~/js/jquery-1.6.min.js"></script>
+    <script src="~/js/mine.js"></script>
+</head>
+
+<body>
+    <div id="box">
+
+        <div id="right_width" class="right_show">
+            <div class="right_wrap">
+                @RenderBody()
+            </div>
+            <div class="clear"></div>
+        </div>
+
+
+        <div id="left_nav" class="left_menu">
+            <div class="back">
+                <a href="/Home"></a>
+            </div>
+            <div class="menu_list">
+                <ul>
+                    <li><a href="/Employee">员工信息浏览</a></li>
+                    <li><a href="#">增加员工</a></li>
+                    <li><a href="#">删除员工</a></li>
+                    <li><a href="#">密码管理</a></li>
+                    <li><a href="#">岗位管理</a></li>
+                    <li><a href="#">报表参数</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+</html>

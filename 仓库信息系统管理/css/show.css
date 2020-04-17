@@ -35,8 +35,9 @@ div,form,img,ul,li,input,p,ul,ol,li,form{margin:0px;padding:0px;border:0px; list
 	height: 100%;
 	background: #0d8c85;
 	border-right: 1px solid #037a74;
-	margin-left: -100%;
-	/*position: absolute;*/
+	/*margin-left: -100%;*/
+	position: fixed;
+    left:0px;
 	/*bottom: 0px;
 	display: none;*/
 	
@@ -111,10 +112,9 @@ div,form,img,ul,li,input,p,ul,ol,li,form{margin:0px;padding:0px;border:0px; list
 	/*text-align: right;*/
 }
 #box .right_show .right_wrap .show_title p{
-	text-align: right;
+	text-align: left;
 	line-height: 100px;
 	color: #FFFFFF;
-	/*width: 300px;*/
 	font-size: 40px;
 	/*float: right;*/
 }
@@ -250,7 +250,7 @@ div,form,img,ul,li,input,p,ul,ol,li,form{margin:0px;padding:0px;border:0px; list
 
 
 #box .right_show .right_wrap .right_box .content_box .content_all table{
-	width: 97%;
+	width: 87%;
 	margin: 0px auto;
 	margin-top: 20px;
 }
@@ -534,3 +534,4 @@ div,form,img,ul,li,input,p,ul,ol,li,form{margin:0px;padding:0px;border:0px; list
 	background: url(../img/btn_colse.png) no-repeat center;
 	float: left;
 }
+

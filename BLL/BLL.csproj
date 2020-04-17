@@ -39,8 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmployeeManage.cs" />
     <Compile Include="LoginManage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkManage.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

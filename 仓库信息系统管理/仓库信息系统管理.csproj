@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -109,8 +110,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\WorkController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -120,10 +123,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="css\addproduct.css" />
+    <Content Include="css\Employee.css" />
     <Content Include="css\ie-css3.htc" />
     <Content Include="css\login.css" />
     <Content Include="css\main.css" />
     <Content Include="css\show.css" />
+    <Content Include="css\LoginDemo.css" />
     <Content Include="Global.asax" />
     <Content Include="img\app_48.png" />
     <Content Include="img\btn_back.jpg" />
@@ -131,6 +137,17 @@
     <Content Include="img\btn_colse.png" />
     <Content Include="img\btn_login.png" />
     <Content Include="img\btn_send.png" />
+    <Content Include="img\head\10009.jpg" />
+    <Content Include="img\head\10008.jpg" />
+    <Content Include="img\head\10006.jpg" />
+    <Content Include="img\head\10002.jpg" />
+    <Content Include="img\head\10001.jpg" />
+    <Content Include="img\head\10003.jpg" />
+    <Content Include="img\head\10004.jpg" />
+    <Content Include="img\head\10005.jpg" />
+    <Content Include="img\head\10007.jpg" />
+    <Content Include="img\head\10010.jpg" />
+    <Content Include="img\head\10011.jpg" />
     <Content Include="img\icon_accept.png" />
     <Content Include="img\icon_admin.jpg" />
     <Content Include="img\icon_book.png" />
@@ -166,6 +183,22 @@
     <Content Include="js\tree_themes\imgs\st_icon_open.png" />
     <Content Include="js\tree_themes\imgs\st_node.gif" />
     <Content Include="js\tree_themes\SimpleTree.css" />
+    <None Include="js\Validate\jquery-1.8.2-vsdoc.js" />
+    <Content Include="js\Validate\jquery-1.8.2.js" />
+    <Content Include="js\Validate\jquery-1.8.2.min.js" />
+    <Content Include="js\Validate\jquery-ui-1.8.24.js" />
+    <Content Include="js\Validate\jquery-ui-1.8.24.min.js" />
+    <Content Include="js\Validate\jquery.unobtrusive-ajax.js" />
+    <Content Include="js\Validate\jquery.unobtrusive-ajax.min.js" />
+    <None Include="js\Validate\jquery.validate-vsdoc.js" />
+    <Content Include="js\Validate\jquery.validate.js" />
+    <Content Include="js\Validate\jquery.validate.min.js" />
+    <Content Include="js\Validate\jquery.validate.unobtrusive.js" />
+    <Content Include="js\Validate\jquery.validate.unobtrusive.min.js" />
+    <Content Include="js\Validate\knockout-2.2.0.debug.js" />
+    <Content Include="js\Validate\knockout-2.2.0.js" />
+    <Content Include="js\Validate\modernizr-2.6.2.js" />
+    <None Include="js\Validate\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -176,6 +209,8 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutPage_Employee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -199,6 +234,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Login\AdminLogin.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_LayoutPage_product.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Work\Product.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Work\Records.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\LoginDemo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Work\AddRecords.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Work\AddProduct.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

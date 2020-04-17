@@ -1,0 +1,60 @@
+﻿@model List<Models.Ext.EmployeeExt>
+
+@{
+    ViewBag.Title = "员工信息浏览";
+    Layout = "~/Views/Shared/_LayoutPage_Employee.cshtml";
+}
+
+<link href="~/css/Employee.css" rel="stylesheet" />
+<script src="~/js/jquery-1.6.min.js"></script>
+<div class="show_title"><p>员工信息</p></div>
+<div style="position:relative;bottom:70px;">@Html.Action("AdminDemo", "Login")</div>
+<div class="searchEmp">
+    <div class="EmpTitle">查找员工</div>
+    <div class="SearchEmp_main">
+        <form action="/Employee/Query" method="post">
+            <div class="department">
+                <span>部门：</span>
+                @Html.DropDownList("DepId", (SelectList)ViewBag.DepList, new { id = "JobSec" })
+            </div>
+            <div class="job">
+                <span>职称：</span>
+                @Html.DropDownList("RoleId",(SelectList)ViewBag.RoleList,new { id= "JobSec"})
+            </div>
+            <div class="search">
+                <input type="text" id="search" name="EmpName"><input type="submit" value="搜索" id="Searchbtn">
+            </div>
+        </form>
+</div>
+</div>
+<div class="fenge">   </div>
+
+<div class="AllEmps">
+    @{
+        if (TempData["status"].ToString() == "Empty")
+        {
+            <div style="font-size:32px;text-align:center;font-weight:800;color:white;">未找到相关信息！</div>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <div class="Emp">
+                    <div style="display:inline-block;">
+                        <div style="margin:5px;">姓名：@item.EmpName</div>
+                        <div style="margin:5px;">性别：@item.EmpGender</div>
+                        <div style="margin:5px;">部门：@item.DepName</div>
+                        <div style="margin:5px;">职称：@item.RoleName1 &nbsp; @item.RoleName2 &nbsp; @item.RoleName3</div>
+                        <div style="margin:5px;">联系电话：@item.EmpPhone</div>
+                    </div>
+
+                    <div class="EmpPic">
+                        <img src="~/img/head/@(item.EmpId).jpg" width="160" height="220" />
+                    </div>
+                </div>
+            }
+        }
+    }   
+</div>
+
+

@@ -1,0 +1,90 @@
+﻿@model List<Models.Product>
+
+@{
+    ViewBag.Title = "产品出入库记录";
+    Layout = "~/Views/Shared/_LayoutPage_product.cshtml";
+}
+
+<script type="text/javascript">
+    function sub(ProductId) {
+        var ProductName = $("#Name_" +ProductId).val();
+        var Customer = $("#Cus_" + ProductId).val();
+        var InNum = $("#In_" + ProductId).val();
+        var OutNum = $("#Out_" + ProductId).val();
+        if (InNum == 0 && OutNum == 0) {
+            alert("出库和入库不能同时为零！");
+            return;
+        }
+        if (InNum == 0)
+            InNum = 0;
+        if (OutNum == 0)
+            OutNum = 0;
+        $.post("/work/updateRecord",
+            { "ProductId": ProductId, "ProductName": ProductName, "Customer": Customer, "InNum": InNum, "OutNum": OutNum },
+            function (data, status) {
+                $("#result_" + ProductId).val("更新成功");
+                $("#result_" + ProductId).css("color", "#58D68D ");
+            })
+    };
+</script>
+<style>
+    input[type="button"]:hover{
+        cursor:pointer;
+        background-color:aqua;
+    }
+</style>
+<div class="show_title"><p>产品出入库记录</p></div>
+<div style="position:relative;bottom:70px;">@Html.Action("AdminDemo", "Login")</div>
+<Div class="right_box">
+    <div class="right_topBar">
+        <ul>
+            <li><a href="#">增加记录</a></li>
+            <li><a href="#">导出记录</a></li>
+        </ul>
+    </div>
+
+    <div class="content_box">
+        <div>
+
+        </div>
+        <div class="content_all" >
+            <table style="width:55%" border="0" cellpadding="0" cellspacing="1" bgcolor="#999999">
+                <tr>
+                    <td align="center" valign="middle" width="100px" bgcolor="#d1d1d1">产品编号</td>
+                    <td align="center" valign="middle" bgcolor="#d1d1d1">产品名称</td>
+                    <td align="center" valign="middle" bgcolor="#d1d1d1">客户名称</td>
+                    <td height="35" align="center" valig="middle" bgcolor="#d1d1d1">出库数</td>
+                    <td height="35" align="center" valign="middle" bgcolor="#d1d1d1">入库数</td>
+                    <td height="35" align="center" valig="middle" bgcolor="#d1d1d1" width="100px">操作</td>
+                    <td height="35" align="center" valig="middle" bgcolor="#d1d1d1" width="150px">状态</td>
+                </tr>
+                @{
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td height="35" align="left" valign="middle"  bgcolor="#fff"><input type="text" style="height:33px; width:100%;"  name="ProductId"  value="@item.ProductId" readonly /></td>
+                            <td height="35" align="left" valign="middle" bgcolor="#fff"><input type="text" style="height:33px;width:100%;" name="ProductName"  id="Name_@item.ProductId"  value="@item.ProductName" readonly/></td>
+                            <td height="35" align="left" valign="middle" bgcolor="#fff"><input type="text" style="height:33px;width:100%;" name="Customer"  id="Cus_@item.ProductId" value="@item.Customer" readonly /></td>
+                            <td height="35" align="left" valign="middle" bgcolor="#fff"><input type="text" style="height:33px;width:100%;" name="OutNum" id="Out_@item.ProductId"/></td>
+                            <td height="35" align="left" valign="middle" bgcolor="#fff"><input type="text" style="height:33px;width:100%;" name="InNum" id="In_@item.ProductId"/></td>
+                            <td height="35" align="center" valign="middle" bgcolor="#fff"><input type="button" id="btn_@item.ProductId" name="btnSub" style="width:80px; height:40px; " value="提交"  onclick="sub('@item.ProductId')"/></td>
+                            <td height="35" align="center" valign="middle" bgcolor="#fff"  ><input type="text" style="height:33px;" name="ProductId" value="无更新" id="result_@item.ProductId" readonly /></td>
+                        </tr>
+                    }
+                }
+            </table>
+            <div class="page">
+                <ul>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>  
+                    <li><a href="#">5</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+</Div>
