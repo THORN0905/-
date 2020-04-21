@@ -43,5 +43,11 @@ namespace 仓库信息系统管理.Controllers
             return View("Index", EmpList);
         }
 
+        public ActionResult Detail(int EmpId)
+        {
+            EmployeeExt Emp = new EmployeeManage().QueryEmpById(EmpId);
+            return View("Detail",Emp);
+        }
+
     }
 }

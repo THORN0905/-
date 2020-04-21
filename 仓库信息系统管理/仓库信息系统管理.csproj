@@ -211,6 +211,8 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutPage_Employee.cshtml" />
+    <Content Include="Views\Employee\AddEmployee.cshtml" />
+    <Content Include="Views\Employee\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

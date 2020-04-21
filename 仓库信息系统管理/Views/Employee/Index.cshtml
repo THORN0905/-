@@ -7,6 +7,16 @@
 
 <link href="~/css/Employee.css" rel="stylesheet" />
 <script src="~/js/jquery-1.6.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $(".Emp").click(function () {
+
+            var EmpId = $(this).attr('id');
+            alert(EmpId);
+            location.href = "/Employee/Detail?EmpId="+EmpId;
+        });
+    });
+</script>
 <div class="show_title"><p>员工信息</p></div>
 <div style="position:relative;bottom:70px;">@Html.Action("AdminDemo", "Login")</div>
 <div class="searchEmp">
@@ -39,8 +49,9 @@
         {
             foreach (var item in Model)
             {
-                <div class="Emp">
+                <div class="Emp" id="@item.EmpId">
                     <div style="display:inline-block;">
+                        <div style="margin:5px;">编号：@item.EmpId</div>
                         <div style="margin:5px;">姓名：@item.EmpName</div>
                         <div style="margin:5px;">性别：@item.EmpGender</div>
                         <div style="margin:5px;">部门：@item.DepName</div>

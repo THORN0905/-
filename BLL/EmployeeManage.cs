@@ -49,5 +49,10 @@ namespace BLL
         {
             return new EmployeeService().ShowDepAll();
         }
+
+        public EmployeeExt QueryEmpById(int EmpId)
+        {
+            return new EmployeeService().queryEmpById(EmpId);
+        }
     }
 }

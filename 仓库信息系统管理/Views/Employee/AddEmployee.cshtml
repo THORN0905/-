@@ -1,0 +1,30 @@
+﻿@model Models.Ext.EmployeeExt
+
+@{
+    ViewBag.Title = "添加员工信息";
+    Layout = "~/Views/Shared/_LayoutPage_Employee.cshtml";
+}
+
+<link href="~/css/Employee.css" rel="stylesheet" />
+<script src="~/js/jquery-1.6.min.js"></script>
+<div class="show_title"><p>员工信息</p></div>
+<div style="position:relative;bottom:70px;">@Html.Action("AdminDemo", "Login")</div>
+<div class="searchEmp">
+    <div class="EmpTitle">查找员工</div>
+    <div class="SearchEmp_main">
+        <form action="/Employee/Query" method="post">
+            <div class="department">
+                <span>部门：</span>
+                @Html.DropDownList("DepId", (SelectList)ViewBag.DepList, new { id = "JobSec" })
+            </div>
+            <div class="job">
+                <span>职称：</span>
+                @Html.DropDownList("RoleId", (SelectList)ViewBag.RoleList, new { id = "JobSec" })
+            </div>
+            <div class="search">
+                <input type="text" id="search" name="EmpName"><input type="submit" value="搜索" id="Searchbtn">
+            </div>
+        </form>
+    </div>
+</div>
+<div class="fenge">   </div>

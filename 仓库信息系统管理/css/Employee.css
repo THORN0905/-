@@ -120,3 +120,71 @@
      font-size:19px;
      width:160px;
 }
+
+.Emp_detail{
+    font-size:20px;
+    margin:60px auto;
+    width:60%;
+    height:600px;
+    background-color: rgba(100,200,200,0.8);
+    vertical-align:top;
+}
+.emp_item{
+    width:280px;
+    height:40px;
+    margin:15px;
+    display:inline-block;
+}
+.Emp_detail div input{
+    font-size:20px;
+    width:180px;
+    height:40px;
+    background-color:rgba(220,220,220,0.9);
+    text-indent:2em;
+}
+.emp_detail_left{
+    width:70%;
+    height:600px;
+    display:inline-block;
+    float:left;
+    z-index:10;
+}
+.emp_item span{
+    display:inline-block;
+    width:120px;
+    background-color: rgba(225,225,225,0.3);
+}
+
+.emp_detail_pic{
+    width:190px;
+    height:260px;
+    display:inline-block;
+    margin-right:90px;
+    float:right;
+    margin:20px 180px 0 0px;
+}
+#lengthInfo{
+    width:400px;
+}
+#lengthInfo input{
+    width:600px;
+}
+.emp_detail_right{
+
+    width:300px;
+    height:600px;
+    float:left;
+}
+.detail_option{
+    text-align:center;
+     width:200px;
+     margin-top:40px;
+     margin-left:-95px;
+     z-index:2;
+     background-color:lightgreen !important;
+}
+.detail_option:hover{
+    cursor:pointer;
+    background-color:darkseagreen !important;
+    color:white;
+}

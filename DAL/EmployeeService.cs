@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -120,9 +120,13 @@ namespace DAL
             return RoleList;
         }
 
+        /// <summary>
+        /// 显示所有部门
+        /// </summary>
+        /// <returns></returns>
         public  List<Department> ShowDepAll()
         {
-            string sql = "SELECT  Department.DepId, Department.DepName, 	Department.DepAddress, Department.DepPhone FROM dbo.Department";
+            string sql = "SELECT  Department.DepId,Department.DepName,Department.DepAddress,Department.DepPhone FROM dbo.Department";
             SqlDataReader result = new Helper.SQLHelper().queryAllResult(sql, false);
             List<Department> DepList = new List<Department>();
             while (result.Read())
@@ -136,6 +140,46 @@ namespace DAL
                 });
             }
             return DepList;
+        }
+
+        /// <summary>
+        /// 按编号查询员工
+        /// </summary>
+        /// <param name="EmpId"></param>
+        /// <returns></returns>
+        public EmployeeExt queryEmpById(int EmpId)
+        {
+            string sql = "SELECT Employee.EmpId, Employee.EmpName, Employee.EmpGender, Employee.EmpBirthday,  " +
+               " Employee.EmpIdNo, Employee.EmpDepId, Employee.EmpAddress, Employee.EmpPhone, Employee.EmpRole1,Employee.EmpRole2,Employee.EmpRole3, " +
+                "(select RoleName from Role where RoleId = Employee.EmpRole1) as RoleName1, " +
+                "(select RoleName from Role where RoleId = Employee.EmpRole2) as RoleName2," +
+                "(select RoleName from Role where RoleId = Employee.EmpRole3) as RoleName3," +
+                   " Department.DepName FROM  dbo.Employee  join dbo.Department on Employee.EmpDepId = Department.DepId " +
+                    " WHERE Employee.EmpId = @EmpId";
+            SqlParameter[] param = new SqlParameter[]{
+                new SqlParameter("@EmpId",EmpId)
+            };
+            EmployeeExt Emp = new EmployeeExt();
+            SqlDataReader result = new Helper.SQLHelper().queryAllResult(sql, param,false);
+            while (result.Read())
+            {
+                Emp.EmpId = Convert.ToInt32(result["EmpId"]);
+                Emp.EmpName = result["EmpName"].ToString();
+                Emp.EmpGender = result["EmpGender"].ToString();
+                Emp.EmpAddress = result["EmpAddress"].ToString();
+                Emp.EmpPhone = result["EmpPhone"].ToString();
+                Emp.EmpIdNo = result["EmpIdNo"].ToString();
+                Emp.EmpDepId = Convert.ToInt32(result["EmpDepId"]);
+                Emp.EmpRole1 = Convert.ToInt32(result["EmpRole1"]);
+                Emp.EmpRole2 = Convert.ToInt32(result["EmpRole2"]);
+                Emp.EmpRole3 = Convert.ToInt32(result["EmpRole3"]);
+                Emp.RoleName1 = result["RoleName1"].ToString();
+                Emp.RoleName2 = result["RoleName2"].ToString();
+                Emp.RoleName3 = result["RoleName3"].ToString();
+                Emp.DepName = result["DepName"].ToString();
+                Emp.EmpBirthday = Convert.ToDateTime(result["EmpBirthday"]);
+            }
+            return Emp;
         }
     }
 }

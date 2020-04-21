@@ -1,0 +1,35 @@
+﻿@model Models.Ext.EmployeeExt
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_LayoutPage_Employee.cshtml";
+}
+
+<link href="~/css/Employee.css" rel="stylesheet" />
+<script src="~/js/jquery-1.6.min.js"></script>
+<div class="show_title"><p>员工信息</p></div>
+<div style="position:relative;bottom:70px;">@Html.Action("AdminDemo", "Login")</div>
+
+<div class="fenge">   </div>
+
+<div class="Emp_detail">
+    <div class="emp_detail_left">
+        <div class="emp_detail_pic">
+            <img  style="margin-right:20px;" src="~/img/head/@(Model.EmpId).jpg" width="190" height="260" />
+        </div>
+        <div class="emp_item"><span>编号：</span><input name="EmpId" value="@Model.EmpId" readonly /></div>
+        <div class="emp_item" style="display:block;"><span>姓名：</span><input name="EmpId" value="@Model.EmpName" readonly /></div>
+        <div class="emp_item" style="display:block;margin-top:30px;margin-bottom:20px;"><span>性别：</span><input name="EmpId" value="@Model.EmpGender" readonly /></div>
+        <div class="emp_item"><span>出生年月：</span><input name="EmpId" value="@Model.EmpBirthday.ToString("yyyy-MM-dd")" readonly /></div>
+        <div class="emp_item"><span>部门：</span><input name="EmpId" value="@Model.DepName" readonly /></div>
+        <div class="emp_item" style="margin-left:-80px;"><span>职称：</span><input style="width:350px;"  name="EmpId" value="@Model.RoleName1  @Model.RoleName2  @Model.RoleName3" readonly /></div>
+        <div class="emp_item" style="width:300px "><span>身份证号：</span><input style="width:350px;"  name="EmpId" value="@Model.EmpIdNo" readonly /></div>
+        <div class="emp_item" id="lengthInfo"><span>联系电话：</span><input name="EmpId" value="@Model.EmpPhone" readonly /></div>
+        <div class="emp_item" id="lengthInfo"><span>住址：</span><input name="EmpId" value="@Model.EmpAddress" readonly /></div>  
+    </div>
+    <div class="emp_detail_right">
+        <div><input  class="detail_option" type="button" value="编辑员工信息" /></div>
+        <div><input class="detail_option" type="button" value="员工出勤信息" /></div>
+        <div><input class="detail_option" type="button" value="删除员工信息" /></div>
+    </div>
+</div>
